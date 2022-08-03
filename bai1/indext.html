@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="form">
+
+    <label for="">Số a</label>
+    <input type="text" id="a" placeholder="Nhập số a">
+    <label for="">Số b</label>
+    <input type="text" id="b" placeholder="Nhập số b">
+    <button type="submit" id="button">Enter</button>
+
+    </form>
+    <script>
+        const aInput = document.querySelector("#a");
+        const bInput = document.querySelector("#b");
+        const form = document.querySelector("#form")
+
+        form.addEventListener("submit", (e) =>{
+            e.preventDefault();
+            const aValue = aInput.value;
+            const bValue = bInput.value;
+            let x = +bValue +1
+            
+            for (let i = aValue;i>0 ;i++){
+                if (i==x){
+                    break;
+                    
+                }
+                const div =document.createElement("div");
+                div.innerHTML=`
+                <p> ${i}</p>
+                `
+                form.appendChild(div)
+            }
+        })
+    </script>
+</body>
+</html>
